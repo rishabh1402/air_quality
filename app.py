@@ -9,13 +9,13 @@ import pandas as pd
 app = Flask(__name__,template_folder='templates')
 
 def graph(city):
-    dp = pd.read_csv('D:/Hackathons/Delta/Air/Air_quality.csv',encoding= 'unicode_escape')
+    dp = pd.read_csv('./Air_quality.csv',encoding= 'unicode_escape')
     dp['state'] = dp['state'].str.upper()
     dp['city'] = dp['city'].str.upper()
     dp2 = dp[dp['city']==city].reset_index()
     sns.countplot(dp2['pollutant_id'])
     plt.title('Air Quality Index', size=20)
-    plt.savefig("D:/Hackathons/Delta/Air/static/output.jpg")
+    plt.savefig("./static/output.jpg")
 
 
 # ROUTES
