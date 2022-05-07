@@ -1,5 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, Response, request, session
 import seaborn as sns
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import pandas as pd
 
