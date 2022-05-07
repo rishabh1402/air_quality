@@ -25,18 +25,15 @@ def home():
 
 @app.route("/check", methods=["GET", "POST"])
 def check():
-    state = request.form['state']
-    state = state.upper()
-    city = request.form['city']
-    city = city.upper()
-    graph(city)
-    return render_template("success.html")    
-
-
-@app.route("/about")
-def about():
-    return render_template("about.html")
-
+    if request.method == 'POST':
+        state = request.form['state']
+        state = state.upper()
+        city = request.form['city']
+        city = city.upper()
+        graph(city)
+        return render_template("success.html")    
+    else:
+        return render_template("index.html")
 
 
 if __name__ == "__main__":
