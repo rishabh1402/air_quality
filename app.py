@@ -15,7 +15,7 @@ def graph(city):
     dp2 = dp[dp['city']==city].reset_index()
     sns.countplot(dp2['pollutant_id'])
     plt.title('Air Quality Index', size=20)
-    plt.savefig("./static/output.jpg")
+    plt.savefig("static/output.jpg")
 
 
 # ROUTES
